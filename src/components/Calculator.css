@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: rgb(180, 226, 216);
+    background-image: url('bgd.jpg');
+
+}
+
+.Calculator {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    margin: 25px;
+}
+h1{
+    text-align: center;
+    color: white;
+}

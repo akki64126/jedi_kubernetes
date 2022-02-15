@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jedi_calci
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jedi_calci
+  template:
+    metadata:
+      labels:
+        app: jedi_calci
+    spec:
+      containers:
+        - name: jedi_calci
+          image: langmop/cn10:1
+          ports:
+            - containerPort: 3001
+          imagePullPolicy: Always
+
+---
+# ... Service YAML definition
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: jedi_calci
+spec:
+  selector:
+    app: jedi_calci
+  ports:
+    - port: 80
+      targetPort: 3000
+  type: LoadBalancer
